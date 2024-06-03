@@ -1,8 +1,24 @@
 /* eslint-disable react/prop-types */
 
+import axios from "axios";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const DashboardBikeCard = ({ bike }) => {
+const DashboardBikeCard = ({ bike, oneDelete }) => {
+    const handleDelete = async () => {
+
+
+        const deleteSuccess = await axios.delete(`http://localhost:3000/bikes/${bike?.id}`);
+        if (deleteSuccess) {
+            alert('Do you want to delete a product ?')
+
+        }
+        toast.success("Delete Successfully....!")
+        const deleteProduct = oneDelete(bike?.id);
+        deleteProduct();
+
+
+    };
     return (
         <div>
             <div className="card w-auto h-auto  bg-base-100 mb-6 shadow-xl">
@@ -19,7 +35,7 @@ const DashboardBikeCard = ({ bike }) => {
                     <div className="flex gap-4 justify-center mt-3">
                         <button className="btn btn-success text-white">Details</button>
                         <Link to={`/dashboard/Edit-products/${bike?.id}`} className="btn btn-primary">Edit</Link>
-                        <button className="btn btn-error text-white">Delete</button>
+                        <button onClick={handleDelete} className="btn btn-error text-white">Delete</button>
                     </div>
                 </div>
             </div>

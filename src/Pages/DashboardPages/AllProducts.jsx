@@ -15,6 +15,9 @@ const AllProducts = () => {
         }
         load()
     }, [])
+    const handleDeleteBike = (id) => {
+        setBikes(bikes.filter((bike) => bike.id !== id));
+    }
     return (
         <div>
             {/* bike card details  */}
@@ -22,7 +25,7 @@ const AllProducts = () => {
                 <h1 className="text-5xl text-center py-12">Manage All Products</h1>
                 <div className="grid px-5  grid-cols-1 md:grid-cols-1 md:mx-w-full lg:grid-cols-3 justify-items-center lg:gap-2">
                     {
-                        bikes?.map(bike => <DashboardBikeCard key={bike?.id} bike={bike} />)
+                        bikes?.map(bike => <DashboardBikeCard key={bike?.id} bike={bike} oneDelete={handleDeleteBike} />)
                     }
                 </div>
 
