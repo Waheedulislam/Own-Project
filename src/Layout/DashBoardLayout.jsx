@@ -43,8 +43,8 @@ const DashBoardLayout = () => {
                         <div className="bg-slate-300">
                             {/* Sidebar content here */}
                             <li><Link to={'/dashboard/DashboardHome'} >Dashboard</Link></li>
-                            <li><Link to={'/dashboard/all-Products'}>All Products</Link></li>
-                            <li><Link to={'/dashboard/add-Products'}>Add Products</Link></li>
+                            <li><Link to={'/dashboard/Manage-all-Products'}>Manage All Products</Link></li>
+                            <li><Link to={'/dashboard/Add-Products'}>Add Products</Link></li>
 
                         </div>
 
@@ -52,7 +52,7 @@ const DashBoardLayout = () => {
                         {/* Logout */}
                         <div className="flex justify-center gap-28">
                             <li><Link className="btn btn-success" to={'/'}>Home</Link></li>
-                            <button className="btn btn-success" onClick={handleLogOut}>
+                            <button className="btn btn-error" onClick={handleLogOut}>
                                 Log Out
                             </button>
                         </div>

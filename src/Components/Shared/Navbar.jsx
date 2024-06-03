@@ -7,7 +7,6 @@ const Navbar = () => {
 
     const [user] = useAuthState(auth);
     const [signOut] = useSignOut(auth);
-
     // signOut 
     const handleSignOut = () => {
         const successSignOut = signOut();
@@ -51,14 +50,14 @@ const Navbar = () => {
                         </> :
                         <>
                             <div className="flex gap-4 justify-center">
-                                <Link to={'/dashboard'} className="btn">DashBoard</Link>
+                                <Link to={'/dashboard'} className="btn btn-neutral text-white">DashBoard</Link>
 
                                 <div className="avatar">
                                     <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img src={user?.photoURL || '../../../public/user-profile-icon-free-vector.jpg'} />
                                     </div>
                                 </div>
-                                <button className="btn" onClick={handleSignOut}>Log Out</button>
+                                <button className="btn btn-error text-white" onClick={handleSignOut}>Log Out</button>
                             </div>
 
 

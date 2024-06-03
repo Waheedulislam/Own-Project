@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Auth/GoogleLogin";
 import auth from "../../Firebase/firebase.config";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -9,6 +9,9 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location?.state?.from?.pathname || '/'
 
     const handleSignIn = (e) => {
         e.preventDefault();
@@ -21,9 +24,9 @@ const Login = () => {
     };
     useEffect(() => {
         if (user) {
-            navigate('/')
+            navigate(from, { replace: true })
         }
-    }, [navigate, user])
+    }, [navigate, user, from])
     console.log(loading, error)
     return (
         <div>

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Auth/GoogleLogin";
 import auth from "../../Firebase/firebase.config";
 import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -9,8 +9,10 @@ const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    const location = useLocation();
     const userInfo = useAuthState(auth);
 
+    const from = location?.state?.from?.pathname || '/'
     console.log(userInfo)
     // create user 
     const handleSignUp = (e) => {
@@ -26,9 +28,9 @@ const Register = () => {
 
     useEffect(() => {
         if (user) {
-            navigate('/')
+            navigate(from, { replace: true })
         }
-    }, [navigate, user])
+    }, [navigate, user, from])
     console.log(user, loading, error)
 
     return (

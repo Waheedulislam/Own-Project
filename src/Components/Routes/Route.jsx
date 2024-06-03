@@ -62,15 +62,15 @@ const router = createBrowserRouter([
                 element: <DashboardHome />
             },
             {
-                path: 'all-Products',
+                path: 'Manage-all-Products',
                 element: <AllProducts />
             },
             {
-                path: 'add-Products',
+                path: 'Add-Products',
                 element: <AddProducts />
             },
             {
-                path: 'edit-products',
+                path: 'Edit-products',
                 element: <EditProducts />
             }
         ]
