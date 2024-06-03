@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const DashboardBikeCard = ({ bike }) => {
     return (
         <div>
@@ -16,7 +18,7 @@ const DashboardBikeCard = ({ bike }) => {
                     <p>{bike?.description?.length > 30 ? bike?.description?.slice(0, 60) : bike?.description}</p>
                     <div className="flex gap-4 justify-center mt-3">
                         <button className="btn btn-success text-white">Details</button>
-                        <button className="btn btn-primary">Edit</button>
+                        <Link to={`/dashboard/Edit-products/${bike?.id}`} className="btn btn-primary">Edit</Link>
                         <button className="btn btn-error text-white">Delete</button>
                     </div>
                 </div>
