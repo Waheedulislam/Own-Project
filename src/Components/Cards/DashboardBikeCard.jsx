@@ -21,14 +21,14 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
     };
     return (
         <div>
-            <div className="card w-auto h-auto  bg-base-100 mb-6 shadow-xl">
-                <figure><img className="w-96 h-80" src={bike?.image} alt="Shoes" /></figure>
+            <div className="card w-80 h-auto  bg-base-100 mb-6 shadow-xl">
+                <figure><img className="w-full h-60" src={bike?.image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                         Name : {bike?.title}
                     </h2>
                     <h2 className="card-title">
-                        price : {bike?.price} $$
+                        Price : {bike?.price} $$
                     </h2>
                     <p className="card-title">Category : {bike?.category}</p>
                     <p>{bike?.description?.length > 30 ? bike?.description?.slice(0, 60) : bike?.description}</p>
