@@ -8,13 +8,13 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
     const handleDelete = async () => {
 
 
-        const deleteSuccess = await axios.delete(`http://localhost:3000/bikes/${bike?.id}`);
+        const deleteSuccess = await axios.delete(`http://localhost:5000/bikes/${bike?._id}`);
         if (deleteSuccess) {
             alert('Do you want to delete a product ?')
 
         }
         toast.success("Delete Successfully....!")
-        const deleteProduct = oneDelete(bike?.id);
+        const deleteProduct = oneDelete(bike?._id);
         deleteProduct();
 
 
@@ -33,8 +33,8 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
                     <p className="card-title">Category : {bike?.category}</p>
                     <p>{bike?.description?.length > 30 ? bike?.description?.slice(0, 60) : bike?.description}</p>
                     <div className="flex gap-4 justify-center mt-3">
-                        <button className="btn btn-success text-white">Details</button>
-                        <Link to={`/dashboard/Edit-products/${bike?.id}`} className="btn btn-primary">Edit</Link>
+                        <Link to={`/dashboard/Details-products/${bike?._id}`} className="btn btn-success text-white">Details</Link>
+                        <Link to={`/dashboard/Edit-products/${bike?._id}`} className="btn btn-primary">Edit</Link>
                         <button onClick={handleDelete} className="btn btn-error text-white">Delete</button>
                     </div>
                 </div>

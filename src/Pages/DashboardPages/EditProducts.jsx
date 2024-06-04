@@ -17,7 +17,7 @@ const EditProducts = () => {
             }
 
             // bikeData
-            const bikeData = await axios.get(`http://localhost:3000/bikes/${id}`)
+            const bikeData = await axios.get(`http://localhost:5000/bikes/${id}`)
             if (bikeData.status == 200) {
                 setBikeDetails(bikeData.data)
             }
@@ -36,13 +36,12 @@ const EditProducts = () => {
         const category = form.category.value;
 
         const recipeData = {
-            id,
             title,
             price,
             description,
             category
         };
-        const success = await axios.patch(`http://localhost:3000/bikes/${id}`, recipeData);
+        const success = await axios.patch(`http://localhost:5000/bikes/${id}`, recipeData);
         if (success) {
             alert('Do you want to make a product ?')
         }
@@ -67,7 +66,7 @@ const EditProducts = () => {
 
                         defaultValue={bikeDetails?.price}
                         placeholder="Price"
-                        id="price"
+                        name="price"
                         className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className="mb-4">

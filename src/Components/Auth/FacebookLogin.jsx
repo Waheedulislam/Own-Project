@@ -20,7 +20,7 @@ const FacebookLogin = () => {
     return (
         <div>
             <div>
-                <button onClick={handleSignInWithFacebook} className="btn btn-primary w-full">Login With Facebook</button>
+                <button onClick={handleSignInWithFacebook} className="btn btn-outline bg-blue-950 font-bold text-white w-full">Login With Facebook</button>
             </div>
         </div>
     );

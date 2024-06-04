@@ -7,7 +7,7 @@ const AllProducts = () => {
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get('http://localhost:3000/bikes')
+            const data = await axios.get('http://localhost:5000/bikes')
 
             if (data?.status == 200) {
                 setBikes(data?.data)
@@ -16,7 +16,7 @@ const AllProducts = () => {
         load()
     }, [])
     const handleDeleteBike = (id) => {
-        setBikes(bikes.filter((bike) => bike.id !== id));
+        setBikes(bikes.filter((bike) => bike._id !== id));
     }
     return (
         <div>

@@ -1,8 +1,10 @@
 
+
 const DashboardHome = () => {
+
     return (
         <div>
-            <h1>Dashboard home</h1>
+            home
         </div>
     );
 };

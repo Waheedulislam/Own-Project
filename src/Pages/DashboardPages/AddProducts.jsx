@@ -24,17 +24,15 @@ const AddProducts = () => {
         const description = form.description.value;
         const image = form.image.value;
         const category = form.category.value;
-        const id = form.id.value;
 
         const recipeData = {
-            id,
             title,
             price,
             description,
             image,
             category
         };
-        const success = await axios.post('http://localhost:3000/bikes', recipeData);
+        const success = await axios.post('http://localhost:5000/bikes', recipeData);
         if (success) {
             alert('Do you want to make a product ?')
         }
@@ -45,12 +43,6 @@ const AddProducts = () => {
         <div>
             <h1 className="text-5xl font-bold  py-24">Add a  Product</h1>
             <form onSubmit={handleCreateRecipe}>
-                <div className="mb-4">
-                    <input type="number"
-                        required placeholder="Id"
-                        name='id'
-                        className="input input-bordered w-full max-w-xs" />
-                </div>
                 <div className="mb-4">
                     <input type="text"
                         required

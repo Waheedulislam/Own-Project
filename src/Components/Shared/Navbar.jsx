@@ -31,22 +31,22 @@ const Navbar = () => {
                             <li><Link to={'/blogs'}>Blogs</Link></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className=" lg:text-3xl sm:pr-4 font-bold text-blue-950">Bike Warehouse</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/about'}>About</Link></li>
-                        <li><Link to={'/review'}>Review</Link></li>
-                        <li><Link to={'/blogs'}>Blogs</Link></li>
-                        <li><Link to={'/information'}>Information</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/'}>Home</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/about'}>About</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/review'}>Review</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/blogs'}>Blogs</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/information'}>Information</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end gap-2">
+                <div className="navbar-end ml-16 gap-2">
                     {!user?.email ?
                         <>
-                            <Link to={'/login'} className="btn btn-secondary">Login</Link>
-                            <Link to={'/register'} className='btn btn-secondary'>Register</Link>
+                            <Link to={'/login'} className="btn btn-outline bg-blue-950 font-bold text-white">Login</Link>
+                            <Link to={'/register'} className='btn btn-outline bg-blue-950 font-bold text-white'>Register</Link>
                         </> :
                         <>
                             <div className="flex gap-4 justify-center">

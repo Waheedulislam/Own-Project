@@ -30,11 +30,11 @@ const Login = () => {
     console.log(loading, error)
     return (
         <div>
-            <div className="hero  bg-base-200">
+            <div className="hero  bg-base-200 mb-10">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">
+                        <h1 className="text-5xl font-bold text-blue-950">Login now!</h1>
+                        <p className="py-6 text-blue-950 ">
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
                             excepturi exercitationem quasi. In deleniti eaque aut repudiandae
                             et a id nisi.
@@ -78,7 +78,7 @@ const Login = () => {
                                 </p>{" "}
                             </label>
                             <div className="form-control ">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-outline bg-blue-950 font-bold text-white">Login</button>
                             </div>
                             <div className="divider divider-neutral ">or</div>
                         </form>

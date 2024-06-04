@@ -1,4 +1,3 @@
-import Accordion from "../Components/Home/Accordion";
 import Show from "../Components/Home/Show";
 import Carousel from "../Components/Home/Carousel";
 import Product from "../Components/Home/Product";
@@ -13,7 +12,7 @@ const Home = () => {
             <div className="px-16">
                 <Product />
                 <Show></Show>
-                <Accordion />
+                {/* <Accordion /> */}
                 <Review />
             </div>
 

@@ -29,7 +29,7 @@ const Product = () => {
         <div>
             {/* bike card details  */}
             <div>
-                <h1 className="text-5xl text-center py-12">Our Products</h1>
+                <h1 className="text-5xl text-center text-blue-950 font-bold py-12">Our Products</h1>
                 <div className="grid  grid-cols-1 md:grid-cols-1 md:mx-w-full lg:grid-cols-3 justify-items-center lg:gap-2">
                     {
                         bikes?.reverse()?.slice(0, 6)?.map(bike => <BikeCardsHome key={bike?.id} bike={bike} />)
@@ -40,7 +40,7 @@ const Product = () => {
 
             {/* bike category */}
             <div>
-                <h1 className="text-5xl text-center py-12">Our best Bike category</h1>
+                <h1 className="text-5xl text-center text-blue-950 font-bold py-12">Our best Bike category</h1>
                 <div className="grid  grid-cols-1 md:grid-cols-1 md:mx-w-full lg:grid-cols-3 justify-items-center lg:gap-2">
                     {
                         categories?.map(category => <CategoryCard key={category?.id} category={category} />)
