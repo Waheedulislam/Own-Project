@@ -1,29 +1,37 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Auth/GoogleLogin";
 import auth from "../../Firebase/firebase.config";
-import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import FacebookLogin from "../Auth/FacebookLogin";
+import axios from "axios";
 
 const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
     const location = useLocation();
-    const userInfo = useAuthState(auth);
 
     const from = location?.state?.from?.pathname || '/'
-    console.log(userInfo)
     // create user 
     const handleSignUp = (e) => {
         e.preventDefault();
 
         const form = e.target;
         const email = form.email.value;
+        const name = form.name.value
         const password = form.password.value;
 
-        createUserWithEmailAndPassword(email, password)
-        console.log(email, password)
+        createUserWithEmailAndPassword(email, password).then((data) => {
+            if (data?.user?.email) {
+                const userInfo = {
+                    email: data?.user?.email,
+                    name: name
+                }
+
+                axios.post('http://localhost:5000/user', userInfo)
+            }
+        })
     };
 
     useEffect(() => {
@@ -48,6 +56,19 @@ const Register = () => {
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSignUp} className="card-body">
 
+                            {/* Name  */}
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input
+                                    type="name"
+                                    name="name"
+                                    placeholder="Name"
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
                             {/* email  */}
                             <div className="form-control">
                                 <label className="label">
