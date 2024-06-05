@@ -134,7 +134,6 @@ const EditUserProfile = () => {
                         name="phoneURL"
                         placeholder="Photo URL"
                         className="input input-bordered"
-                        required
                     />
                 </div>
 
