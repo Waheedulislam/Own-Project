@@ -6,8 +6,9 @@ const AddProducts = () => {
     const [categories, setCategories] = useState();
 
     useEffect(() => {
+        // `https://own-project-server.onrender.com/user/${id}`,
         async function load() {
-            const data = await axios.get('http://localhost:3000/categories')
+            const data = await axios.get('https://own-project-server.onrender.com/categories')
             if (data.status == 200) {
                 setCategories(data?.data)
             }
