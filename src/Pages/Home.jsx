@@ -10,8 +10,8 @@ const Home = () => {
             <Carousel />
 
             <div className="px-16">
-                <Product />
                 <Show></Show>
+                <Product />
                 <Accordion></Accordion>
                 <Review />
             </div>

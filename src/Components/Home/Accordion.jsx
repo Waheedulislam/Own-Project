@@ -1,4 +1,4 @@
-
+import photoKtm from '../../../public/ktm.jpg'
 const Accordion = () => {
     return (
         <div className="flex">
@@ -32,7 +32,7 @@ const Accordion = () => {
                 </div>
             </div>
             <div>
-                <img src='../../../public/ktm.jpg' alt="" />
+                <img src={photoKtm} alt="" />
             </div>
         </div>
 
