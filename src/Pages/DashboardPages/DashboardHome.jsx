@@ -9,14 +9,14 @@ const DashboardHome = () => {
     const [userInfo, setUserInfo] = useState();
     console.log(userInfo)
     // useEffect(() => {
-    //     fetch(`https://own-project-server.onrender.com/user/${user?.email}`)
+    //     fetch(`https://own-project-server.vercel.app/user/${user?.email}`)
     //         .then((res) => res.json())
     //         .then((data) => setUserInfo(data))
     // }, [user])
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get(`https://own-project-server.onrender.com/user/${user?.email}`);
+            const data = await axios.get(`https://own-project-server.vercel.app/user/${user?.email}`);
 
             if (data?.status == 200) {
                 setUserInfo(data?.data);

@@ -29,7 +29,7 @@ const Register = () => {
                     name: name
                 }
 
-                axios.post('https://own-project-server.onrender.com/user', userInfo)
+                axios.post('https://own-project-server.vercel.app/user', userInfo)
             }
         })
     };

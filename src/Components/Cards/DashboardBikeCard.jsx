@@ -9,7 +9,7 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
         const token = localStorage.getItem("token");
 
         fetch(
-            `https://own-project-server.onrender.com/bikes/${bike?._id}`,
+            `https://own-project-server.vercel.app/bikes/${bike?._id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -27,7 +27,7 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
                 oneDelete(bike?._id)
 
             });
-        // const deleteSuccess = await axios.delete(`https://own-project-server.onrender.com/bikes/${bike?._id}`);
+        // const deleteSuccess = await axios.delete(`https://own-project-server.vercel.app/bikes/${bike?._id}`);
         // if (deleteSuccess) {
         //     alert('Do you want to delete a product ?')
 

@@ -19,7 +19,7 @@ const EditProducts = () => {
             }
 
             // bikeData
-            const bikeData = await axios.get(`https://own-project-server.onrender.com/bikes/${id}`);
+            const bikeData = await axios.get(`https://own-project-server.vercel.app/bikes/${id}`);
             if (bikeData.status == 200) {
                 setBikeDetails(bikeData.data);
             }
@@ -44,7 +44,7 @@ const EditProducts = () => {
             category,
         };
         fetch(
-            `https://own-project-server.onrender.com/bikes/${id}`,
+            `https://own-project-server.vercel.app/bikes/${id}`,
             {
                 method: "PATCH",
                 headers: {
@@ -67,7 +67,7 @@ const EditProducts = () => {
         // axios Token pass
 
         // const success = await axios.patch({
-        //     baseURL: `https://own-project-server.onrender.com/bikes/${id}`,
+        //     baseURL: `https://own-project-server.vercel.app/bikes/${id}`,
 
         //     headers: {
         //         'Authorization': `Bearer ${token}`

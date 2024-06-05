@@ -7,7 +7,7 @@ const AddProducts = () => {
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get('https://own-project-server.onrender.com/categories')
+            const data = await axios.get('https://own-project-server.vercel.app/categories')
             if (data.status == 200) {
                 setCategories(data?.data)
             }
@@ -34,7 +34,7 @@ const AddProducts = () => {
             category
         };
         fetch(
-            'https://own-project-server.onrender.com/bikes',
+            'https://own-project-server.vercel.app/bikes',
             {
                 method: "POST",
                 headers: {
@@ -52,7 +52,7 @@ const AddProducts = () => {
                     toast.success("Product Added Successfully....!")
                 }
             });
-        // const success = await axios.post('https://own-project-server.onrender.com/bikes', bikeData);
+        // const success = await axios.post('https://own-project-server.vercel.app/bikes', bikeData);
         // if (success) {
         //     alert('Do you want to make a product ?')
         // }

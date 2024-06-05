@@ -1,4 +1,4 @@
-
+// import photo from "../../";
 const Carousel = () => {
     return (
         <div>

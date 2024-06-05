@@ -13,12 +13,12 @@ const Product = () => {
 
         async function load() {
             // bike card details 
-            const bikeRes = await fetch('https://own-project-server.onrender.com/bikes');
+            const bikeRes = await fetch('https://own-project-server.vercel.app/bikes');
             const bikeData = await bikeRes.json()
             setBikes(bikeData)
 
             // bike categories
-            const categoriesRes = await fetch('https://own-project-server.onrender.com/categories')
+            const categoriesRes = await fetch('https://own-project-server.vercel.app/categories')
             const categoriesData = await categoriesRes.json();
             setCategories(categoriesData)
         }

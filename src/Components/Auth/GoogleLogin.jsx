@@ -17,7 +17,7 @@ const GoogleLogin = () => {
                     photoURL: data?.user?.photoURL
                 };
                 // Method 1 : simple fetch
-                fetch("https://own-project-server.onrender.com/user", {
+                fetch("https://own-project-server.vercel.app/user", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const GoogleLogin = () => {
 
                 //Method 2 : axios
 
-                // const success = axios.post('https://own-project-server.onrender.com/user', userInfo, {
+                // const success = axios.post('https://own-project-server.vercel.app/user', userInfo, {
 
                 // })
                 // if (success) {

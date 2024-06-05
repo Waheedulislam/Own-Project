@@ -9,7 +9,7 @@ const DetailsProduct = () => {
     console.log(bikeDetails)
     useEffect(() => {
         async function load() {
-            const bikeData = await axios.get(`https://own-project-server.onrender.com/bikes/${id}`)
+            const bikeData = await axios.get(`https://own-project-server.vercel.app/bikes/${id}`)
             if (bikeData?.status == 200) {
                 setBikeDetails(bikeData?.data)
             }

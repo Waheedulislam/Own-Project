@@ -7,7 +7,7 @@ const AllProducts = () => {
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get('https://own-project-server.onrender.com/bikes')
+            const data = await axios.get('https://own-project-server.vercel.app/bikes')
 
             if (data?.status == 200) {
                 setBikes(data?.data)
