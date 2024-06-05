@@ -2,7 +2,7 @@
 
 const BikeCardsHome = ({ bike }) => {
     return (
-        <div>
+        <div className="py-20">
             <div className="card w-96 bg-base-100 mb-6 shadow-xl">
                 <figure><img className="w-96 h-80" src={bike?.image} alt="Shoes" /></figure>
                 <div className="card-body">
