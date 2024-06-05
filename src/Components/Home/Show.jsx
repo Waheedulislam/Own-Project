@@ -2,9 +2,9 @@ import photoKTvs from '../../../public/tvs-ronin.jpeg'
 
 const Show = () => {
     return (
-        <div className="mt-16">
+        <div className="mt-16 ">
             <h1 className="text-center font-bold text-blue-950 text-5xl my-5">Latest New Bike</h1>
-            <div className="hero min-h-80  mt-10">
+            <div className=" hero min-h-screen  mt-10">
 
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img className=" w-2/4" src={photoKTvs} />
