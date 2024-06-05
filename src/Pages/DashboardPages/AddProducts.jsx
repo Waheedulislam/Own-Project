@@ -16,6 +16,7 @@ const AddProducts = () => {
     }, [])
 
     const handleCreateRecipe = async (e) => {
+        const token = localStorage.getItem("token");
         e.preventDefault();
 
         const form = e.target;
@@ -25,18 +26,37 @@ const AddProducts = () => {
         const image = form.image.value;
         const category = form.category.value;
 
-        const recipeData = {
+        const bikeData = {
             title,
             price,
             description,
             image,
             category
         };
-        const success = await axios.post('http://localhost:5000/bikes', recipeData);
-        if (success) {
-            alert('Do you want to make a product ?')
-        }
-        toast.success("Product Added Successfully....!")
+        fetch(
+            'http://localhost:5000/bikes',
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(bikeData),
+            }
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                if (data) {
+                    console.log(data)
+                    alert('Do you want to make a product ?')
+                    toast.success("Product Added Successfully....!")
+                }
+            });
+        // const success = await axios.post('http://localhost:5000/bikes', bikeData);
+        // if (success) {
+        //     alert('Do you want to make a product ?')
+        // }
+        // toast.success("Product Added Successfully....!")
         form.reset();
     }
     return (

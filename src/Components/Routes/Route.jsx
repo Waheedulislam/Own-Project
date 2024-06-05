@@ -14,6 +14,7 @@ import AddProducts from "../../Pages/DashboardPages/AddProducts";
 import EditProducts from "../../Pages/DashboardPages/EditProducts";
 import PrivateRoute from "./PrivateRoute";
 import DetailsProduct from "../../Pages/DashboardPages/DetailsProduct";
+import EditUserProfile from "../../Pages/DashboardPages/EditUserProfile";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
         ),
         children: [
             {
+                index: 'dashboard',
+                element: <DashboardHome />
+            },
+            {
                 path: 'DashboardHome',
                 element: <DashboardHome />
             },
@@ -72,11 +77,17 @@ const router = createBrowserRouter([
             },
             {
                 path: 'Edit-products/:id',
-                element: <EditProducts />
+                element: (
+                    <EditProducts />
+                ),
             },
             {
                 path: 'Details-products/:id',
                 element: <DetailsProduct />
+            },
+            {
+                path: 'profile/edit/:id',
+                element: <EditUserProfile />
             }
         ]
     }

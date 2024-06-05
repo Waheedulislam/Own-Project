@@ -1,21 +1,40 @@
 /* eslint-disable react/prop-types */
 
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const DashboardBikeCard = ({ bike, oneDelete }) => {
     const handleDelete = async () => {
+        const token = localStorage.getItem("token");
 
+        fetch(
+            `http://localhost:5000/bikes/${bike?._id}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        )
+            .then((res) => res.json())
+            .then((data) => {
 
-        const deleteSuccess = await axios.delete(`http://localhost:5000/bikes/${bike?._id}`);
-        if (deleteSuccess) {
-            alert('Do you want to delete a product ?')
+                console.log(data)
+                alert('Do you want to delete a product ?')
+                toast.success("Delete Successfully....!")
+                oneDelete(bike?._id)
 
-        }
-        toast.success("Delete Successfully....!")
-        const deleteProduct = oneDelete(bike?._id);
-        deleteProduct();
+            });
+        // const deleteSuccess = await axios.delete(`http://localhost:5000/bikes/${bike?._id}`);
+        // if (deleteSuccess) {
+        //     alert('Do you want to delete a product ?')
+
+        // }
+        // toast.success("Delete Successfully....!")
+        // const deleteProduct = oneDelete(bike?._id);
+        // deleteProduct();
 
 
     };

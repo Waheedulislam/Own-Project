@@ -22,7 +22,7 @@ const Register = () => {
         const name = form.name.value
         const password = form.password.value;
 
-        createUserWithEmailAndPassword(email, password).then((data) => {
+        createUserWithEmailAndPassword(email, password, name).then((data) => {
             if (data?.user?.email) {
                 const userInfo = {
                     email: data?.user?.email,
