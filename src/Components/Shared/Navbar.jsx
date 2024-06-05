@@ -36,10 +36,11 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link className="text-blue-950 font-bold" to={'/'}>Home</Link></li>
+                        <li><Link className="text-blue-950 font-bold" to={'/information'}>Information</Link></li>
                         <li><Link className="text-blue-950 font-bold" to={'/about'}>About</Link></li>
                         <li><Link className="text-blue-950 font-bold" to={'/review'}>Review</Link></li>
                         <li><Link className="text-blue-950 font-bold" to={'/blogs'}>Blogs</Link></li>
-                        <li><Link className="text-blue-950 font-bold" to={'/information'}>Information</Link></li>
+
                     </ul>
                 </div>
                 <div className="navbar-end ml-16 gap-2">
