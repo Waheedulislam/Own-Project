@@ -51,44 +51,34 @@
   ],
   "categories": [
     {
-      "title": "Standard",
-      "id": "1"
+      "title": "Standard"
     },
     {
-      "title": "Cruiser",
-      "id": "2"
+      "title": "Cruiser"
     },
     {
-      "title": "Touring",
-      "id": "3"
+      "title": "Touring"
     },
     {
-      "title": "Sport",
-      "id": "4"
+      "title": "Sport"
     },
     {
-      "title": "Off-road",
-      "id": "5"
+      "title": "Off-road"
     },
     {
-      "title": "Dual-purpose",
-      "id": "6"
+      "title": "Dual-purpose"
     },
     {
-      "title": "Sport touring",
-      "id": "7"
+      "title": "Sport touring"
     },
     {
-      "title": "Scooters",
-      "id": "8"
+      "title": "Scooters"
     },
     {
-      "title": "Tricycles",
-      "id": "9"
+      "title": "Tricycles"
     },
     {
-      "title": "Utility",
-      "id": "10"
+      "title": "Utility"
     }
   ]
 }

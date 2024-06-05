@@ -29,7 +29,7 @@ const Register = () => {
                     name: name
                 }
 
-                axios.post('http://localhost:5000/user', userInfo)
+                axios.post('https://own-project-server.onrender.com/user', userInfo)
             }
         })
     };

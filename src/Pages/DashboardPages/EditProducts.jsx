@@ -19,7 +19,7 @@ const EditProducts = () => {
             }
 
             // bikeData
-            const bikeData = await axios.get(`http://localhost:5000/bikes/${id}`);
+            const bikeData = await axios.get(`https://own-project-server.onrender.com/bikes/${id}`);
             if (bikeData.status == 200) {
                 setBikeDetails(bikeData.data);
             }
@@ -44,7 +44,7 @@ const EditProducts = () => {
             category,
         };
         fetch(
-            `http://localhost:5000/bikes/${id}`,
+            `https://own-project-server.onrender.com/bikes/${id}`,
             {
                 method: "PATCH",
                 headers: {
@@ -67,7 +67,7 @@ const EditProducts = () => {
         // axios Token pass
 
         // const success = await axios.patch({
-        //     baseURL: `http://localhost:5000/bikes/${id}`,
+        //     baseURL: `https://own-project-server.onrender.com/bikes/${id}`,
 
         //     headers: {
         //         'Authorization': `Bearer ${token}`

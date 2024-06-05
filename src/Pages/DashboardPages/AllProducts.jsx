@@ -7,7 +7,7 @@ const AllProducts = () => {
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get('http://localhost:5000/bikes')
+            const data = await axios.get('https://own-project-server.onrender.com/bikes')
 
             if (data?.status == 200) {
                 setBikes(data?.data)

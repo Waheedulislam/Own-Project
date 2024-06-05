@@ -15,7 +15,7 @@ const EditUserProfile = () => {
     useEffect(() => {
         async function load() {
             // profile details get Edit
-            const userData = await axios.get(`http://localhost:5000/user/get/${id}`)
+            const userData = await axios.get(`https://own-project-server.onrender.com/user/get/${id}`)
             if (userData.status == 200) {
                 setUserDetails(userData.data)
             }
@@ -46,7 +46,7 @@ const EditUserProfile = () => {
 
         // Profile Update
         fetch(
-            `http://localhost:5000/user/${id}`,
+            `https://own-project-server.onrender.com/user/${id}`,
             {
                 method: "PATCH",
                 headers: {

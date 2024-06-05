@@ -34,7 +34,7 @@ const AddProducts = () => {
             category
         };
         fetch(
-            'http://localhost:5000/bikes',
+            'https://own-project-server.onrender.com/bikes',
             {
                 method: "POST",
                 headers: {
@@ -52,7 +52,7 @@ const AddProducts = () => {
                     toast.success("Product Added Successfully....!")
                 }
             });
-        // const success = await axios.post('http://localhost:5000/bikes', bikeData);
+        // const success = await axios.post('https://own-project-server.onrender.com/bikes', bikeData);
         // if (success) {
         //     alert('Do you want to make a product ?')
         // }

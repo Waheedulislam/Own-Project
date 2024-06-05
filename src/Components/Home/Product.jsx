@@ -13,12 +13,12 @@ const Product = () => {
 
         async function load() {
             // bike card details 
-            const bikeRes = await fetch('http://localhost:3000/bikes');
+            const bikeRes = await fetch('https://own-project-server.onrender.com/bikes');
             const bikeData = await bikeRes.json()
             setBikes(bikeData)
 
             // bike categories
-            const categoriesRes = await fetch('http://localhost:3000/categories')
+            const categoriesRes = await fetch('https://own-project-server.onrender.com/categories')
             const categoriesData = await categoriesRes.json();
             setCategories(categoriesData)
         }
