@@ -12,7 +12,7 @@ const EditProducts = () => {
         async function load() {
             // categories data
             const categoriesData = await axios.get(
-                "http://localhost:3000/categories"
+                "https://own-project-server.onrender.com/bikes"
             );
             if (categoriesData.status == 200) {
                 setCategories(categoriesData?.data);
