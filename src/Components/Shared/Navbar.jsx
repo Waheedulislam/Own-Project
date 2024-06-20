@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 const Navbar = () => {
 
     const [user] = useAuthState(auth);
+    console.log(user)
     const [signOut] = useSignOut(auth);
     // signOut 
     const handleSignOut = () => {

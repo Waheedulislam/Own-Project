@@ -40,7 +40,10 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
     };
     return (
         <div>
+
+
             <div className="card w-80 h-auto  bg-base-100 mb-6 shadow-xl">
+                {bike.content}
                 <figure><img className="w-full h-60" src={bike?.image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -58,6 +61,8 @@ const DashboardBikeCard = ({ bike, oneDelete }) => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };
